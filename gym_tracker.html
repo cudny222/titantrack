@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TitanTrack - Because if you didn't log it, did you really even lift?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .tagline {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .training-date {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .training-date h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .exercise-item {
+            background: white;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .exercise-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .exercise-stats {
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .no-data {
+            text-align: center;
+            color: #999;
+            padding: 40px;
+            font-size: 1.1em;
+        }
+        
+        .delete-btn {
+            background: #ff4757;
+            padding: 5px 15px;
+            font-size: 14px;
+            margin-top: 10px;
+            width: auto;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .delete-exercise-btn {
+            background: #ff6b6b;
+            padding: 3px 10px;
+            font-size: 12px;
+            width: auto;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        .add-exercise-form {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .add-exercise-form.active {
+            display: block;
+        }
+        
+        .add-exercise-form input {
+            margin-bottom: 10px;
+        }
+        
+        .add-exercise-btn {
+            background: #4caf50;
+            padding: 8px 20px;
+            font-size: 14px;
+            width: auto;
+            margin-top: 10px;
+        }
+        
+        .toggle-form-btn {
+            background: #4caf50;
+            padding: 8px 20px;
+            font-size: 14px;
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .empty-training {
+            color: #999;
+            font-style: italic;
+            padding: 10px 0;
+        }
+        
+        .total-weight {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: 600;
+            color: #856404;
+            font-size: 1.1em;
+        }
+        
+        .loading {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-size: 1.2em;
+        }
+        
+        .sync-status {
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase, ref, set, get, onValue } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+        
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCxvI7_VTbDnIfsAvyTdKuIXTfpEK1Wh-0",
+            authDomain: "titantrack-e86af.firebaseapp.com",
+            databaseURL: "https://titantrack-e86af-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "titantrack-e86af",
+            storageBucket: "titantrack-e86af.firebasestorage.app",
+            messagingSenderId: "282302964770",
+            appId: "1:282302964770:web:2b4f8890db0f0e4a03167b"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const dataRef = ref(database, 'gymData');
+        
+        // Make functions globally available
+        window.firebaseReady = true;
+        window.database = database;
+        window.dataRef = dataRef;
+        window.dbGet = get;
+        window.dbSet = set;
+        window.dbOnValue = onValue;
+        window.dbRef = ref;
+        
+        // Load data from Firebase on startup
+        onValue(dataRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                localStorage.setItem('gymData', JSON.stringify(data));
+                if (window.loadTrainings) {
+                    window.loadTrainings();
+                }
+            }
+        });
+        
+        // Initialize app after Firebase is ready
+        if (window.initApp) {
+            window.initApp();
+        }
+    </script>
+    <div class="container">
+        <h1>🏋️ TitanTrack</h1>
+        <p class="tagline">Because if you didn't log it, did you really even lift?</p>
+        <p class="sync-status" id="syncStatus">☁️ Synced with cloud</p>
+        
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">Create New Training</h2>
+            <form id="newTrainingForm">
+                <div class="form-group">
+                    <label>Training Date</label>
+                    <input type="date" id="newTrainingDate" required>
+                </div>
+                <button type="submit">Create Training</button>
+            </form>
+        </div>
+        
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">Training Catalog</h2>
+            <div id="trainings"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Load data from localStorage
+        function loadData() {
+            const data = localStorage.getItem('gymData');
+            return data ? JSON.parse(data) : {};
+        }
+        
+        // Save data to localStorage and Firebase
+        async function saveData(data) {
+            localStorage.setItem('gymData', JSON.stringify(data));
+            
+            // Save to Firebase
+            if (window.firebaseReady && window.dataRef) {
+                try {
+                    await window.dbSet(window.dataRef, data);
+                    updateSyncStatus('☁️ Synced with cloud');
+                } catch (error) {
+                    console.error('Firebase save error:', error);
+                    updateSyncStatus('⚠️ Sync failed - saved locally');
+                }
+            }
+        }
+        
+        function updateSyncStatus(message) {
+            const status = document.getElementById('syncStatus');
+            if (status) {
+                status.textContent = message;
+            }
+        }
+        
+        // Initialize app
+        window.initApp = function() {
+            // Set today's date as default
+            document.getElementById('newTrainingDate').valueAsDate = new Date();
+            
+            // Load trainings on page load
+            loadTrainings();
+        };
+        
+        // If Firebase is already loaded, init now
+        if (window.firebaseReady) {
+            initApp();
+        }
+        
+        // Convert date format for display (DD.MM.YYYY)
+        function formatDateForDisplay(dateKey) {
+            return dateKey.replace(/-/g, '.');
+        }
+        
+        // Convert date format for Firebase key (YYYY-MM-DD)
+        function formatDateForKey(dateInput) {
+            if (dateInput.includes('-') && dateInput.split('-')[0].length === 4) {
+                // Already in YYYY-MM-DD format
+                return dateInput;
+            }
+            // Convert from DD.MM.YYYY to YYYY-MM-DD
+            const [day, month, year] = dateInput.split('.');
+            return `${year}-${month}-${day}`;
+        }
+        
+        // Handle new training creation
+        document.getElementById('newTrainingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const date = document.getElementById('newTrainingDate').value;
+            const dateKey = date; // Keep YYYY-MM-DD format for Firebase
+            
+            const data = loadData();
+            
+            if (!data[dateKey]) {
+                data[dateKey] = [];
+                saveData(data);
+                loadTrainings();
+            } else {
+                alert('Training for this date already exists!');
+            }
+        });
+        
+        function loadTrainings() {
+            const data = loadData();
+            const container = document.getElementById('trainings');
+            
+            if (Object.keys(data).length === 0) {
+                container.innerHTML = '<div class="no-data">No trainings yet. Add your first exercise!</div>';
+                return;
+            }
+            
+            // Sort dates in descending order (dates are in YYYY-MM-DD format)
+            const sortedDates = Object.keys(data).sort((a, b) => {
+                return new Date(b) - new Date(a);
+            });
+            
+            container.innerHTML = sortedDates.map(dateKey => {
+                const displayDate = formatDateForDisplay(dateKey);
+                const totalWeight = data[dateKey].reduce((sum, ex) => sum + (ex.weight * ex.reps), 0);
+                
+                return `
+                <div class="training-date">
+                    <h3>📅 ${displayDate}</h3>
+                    ${data[dateKey].length === 0 ? '<div class="empty-training">No exercises yet</div>' : ''}
+                    ${data[dateKey].map(ex => `
+                        <div class="exercise-item">
+                            <div class="exercise-name">
+                                ${ex.exercise}
+                                <button class="delete-exercise-btn" onclick="deleteExercise('${dateKey}', ${ex.id})">✕</button>
+                            </div>
+                            <div class="exercise-stats">${ex.weight} kg × ${ex.reps} reps = ${ex.weight * ex.reps} kg total</div>
+                        </div>
+                    `).join('')}
+                    ${data[dateKey].length > 0 ? `<div class="total-weight">💪 Total Weight Lifted: ${totalWeight.toLocaleString()} kg</div>` : ''}
+                    <div class="btn-group">
+                        <button class="toggle-form-btn" onclick="toggleAddForm('${dateKey}')">+ Add Exercise</button>
+                        <button class="delete-btn" onclick="deleteTraining('${dateKey}')">Delete Training</button>
+                    </div>
+                    <div class="add-exercise-form" id="form-${dateKey}">
+                        <div class="form-group">
+                            <label>Exercise</label>
+                            <input type="text" id="exercise-${dateKey}" placeholder="e.g., Bench Press" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Weight (kg)</label>
+                            <input type="number" id="weight-${dateKey}" placeholder="e.g., 150" step="0.5" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Reps</label>
+                            <input type="number" id="reps-${dateKey}" placeholder="e.g., 45" required>
+                        </div>
+                        <button class="add-exercise-btn" onclick="addExerciseToTraining('${dateKey}')">Add</button>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+        
+        function toggleAddForm(dateKey) {
+            const form = document.getElementById(`form-${dateKey}`);
+            form.classList.toggle('active');
+        }
+        
+        function addExerciseToTraining(dateKey) {
+            const exercise = document.getElementById(`exercise-${dateKey}`).value;
+            const weight = document.getElementById(`weight-${dateKey}`).value;
+            const reps = document.getElementById(`reps-${dateKey}`).value;
+            
+            if (!exercise || !weight || !reps) {
+                alert('Please fill all fields');
+                return;
+            }
+            
+            const data = loadData();
+            
+            data[dateKey].push({
+                exercise: exercise,
+                weight: parseFloat(weight),
+                reps: parseInt(reps),
+                id: Date.now()
+            });
+            
+            saveData(data);
+            loadTrainings();
+        }
+        
+        function deleteTraining(dateKey) {
+            const displayDate = formatDateForDisplay(dateKey);
+            if (confirm(`Delete training from ${displayDate}?`)) {
+                const data = loadData();
+                delete data[dateKey];
+                saveData(data);
+                loadTrainings();
+            }
+        }
+        
+        function deleteExercise(dateKey, id) {
+            const data = loadData();
+            data[dateKey] = data[dateKey].filter(ex => ex.id !== id);
+            
+            // If no exercises left for this date, remove the date
+            if (data[dateKey].length === 0) {
+                delete data[dateKey];
+            }
+            
+            saveData(data);
+            loadTrainings();
+        }
+    </script>
+</body>
+</html>
