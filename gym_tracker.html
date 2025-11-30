@@ -12,8 +12,8 @@
         }
         
         body {
-            font-family: 'Arial Black', 'Arial', sans-serif;
-            background: #000 url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover fixed;
+            font-family: 'Arial', sans-serif;
+            background: #0a0e27 url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover fixed;
             min-height: 100vh;
             padding: 20px;
             position: relative;
@@ -26,7 +26,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.75);
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.92) 0%, rgba(26, 31, 58, 0.88) 50%, rgba(15, 20, 25, 0.95) 100%);
             z-index: 0;
         }
         
@@ -38,40 +38,40 @@
         }
         
         h1 {
-            color: #FFD700;
+            color: #4A9EFF;
             text-align: center;
             margin-bottom: 10px;
-            font-size: 3em;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5);
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(74, 158, 255, 0.5), 0 0 40px rgba(74, 158, 255, 0.2);
         }
         
         .tagline {
-            color: #FFD700;
+            color: #8AB4F8;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 1.1em;
+            font-size: 1em;
             font-style: italic;
-            font-family: Arial, sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .card {
-            background: rgba(20, 20, 20, 0.95);
-            border: 3px solid #FFD700;
-            border-radius: 10px;
+            background: rgba(15, 20, 35, 0.95);
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            border-radius: 12px;
             padding: 25px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(74, 158, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
         
         .card h2 {
-            color: #FFD700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 900;
-            font-size: 1.5em;
+            color: #4A9EFF;
+            font-weight: 600;
+            font-size: 1.4em;
+            margin-bottom: 15px;
         }
         
         .form-group {
@@ -81,50 +81,48 @@
         label {
             display: block;
             margin-bottom: 5px;
-            font-weight: 900;
-            color: #FFD700;
-            text-transform: uppercase;
-            font-size: 1em;
-            letter-spacing: 1px;
+            font-weight: 600;
+            color: #8AB4F8;
+            font-size: 0.9em;
         }
         
         input {
             width: 100%;
             padding: 12px;
-            border: 2px solid #FFD700;
-            border-radius: 5px;
-            font-size: 17px;
-            font-weight: 700;
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
             transition: all 0.3s;
-            background: rgba(0, 0, 0, 0.5);
-            color: #FFD700;
+            background: rgba(10, 14, 39, 0.6);
+            color: #E8EAED;
         }
         
         input:focus {
             outline: none;
-            border-color: #FFA500;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            border-color: #4A9EFF;
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+            background: rgba(10, 14, 39, 0.8);
         }
         
         button {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
+            padding: 14px;
+            background: linear-gradient(135deg, #4A9EFF 0%, #2962FF 100%);
+            color: #FFFFFF;
             border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: 900;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
         }
         
         button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 158, 255, 0.4);
+            background: linear-gradient(135deg, #5AA9FF 0%, #3972FF 100%);
         }
         
         button:active {
@@ -132,20 +130,24 @@
         }
         
         .training-date {
-            background: rgba(30, 30, 30, 0.9);
-            border: 2px solid #FFD700;
+            background: rgba(20, 28, 48, 0.6);
+            border: 1px solid rgba(74, 158, 255, 0.2);
             padding: 15px;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+        
+        .training-date:hover {
+            border-color: rgba(74, 158, 255, 0.4);
+            background: rgba(20, 28, 48, 0.8);
         }
         
         .training-date h3 {
-            color: #FFD700;
+            color: #4A9EFF;
             margin-bottom: 10px;
-            font-size: 1.4em;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 1.2em;
+            font-weight: 600;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -153,7 +155,7 @@
         }
         
         .training-date h3:hover {
-            color: #FFA500;
+            color: #5AA9FF;
         }
         
         .collapse-icon {
@@ -178,38 +180,45 @@
         }
         
         .exercise-item {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(10, 14, 39, 0.4);
             padding: 12px;
             margin: 8px 0;
-            border-radius: 5px;
-            border-left: 4px solid #FFD700;
-            border: 1px solid #FFD700;
+            border-radius: 8px;
+            border-left: 3px solid #4A9EFF;
+            border: 1px solid rgba(74, 158, 255, 0.2);
+            transition: all 0.2s;
+        }
+        
+        .exercise-item:hover {
+            background: rgba(10, 14, 39, 0.6);
+            border-color: rgba(74, 158, 255, 0.4);
         }
         
         .exercise-name {
-            font-weight: 900;
-            color: #FFD700;
-            font-size: 1.2em;
+            font-weight: 600;
+            color: #E8EAED;
+            font-size: 1.05em;
         }
         
         .exercise-stats {
-            color: #FFA500;
+            color: #8AB4F8;
             margin-top: 5px;
-            font-size: 1.05em;
-            font-weight: 700;
+            font-size: 0.95em;
+            font-weight: 500;
         }
         
         .no-data {
             text-align: center;
-            color: #FFD700;
+            color: #8AB4F8;
             padding: 40px;
-            font-size: 1.1em;
+            font-size: 1em;
+            font-weight: 500;
         }
         
         .delete-btn {
-            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            background: linear-gradient(135deg, #F44336 0%, #D32F2F 100%);
             padding: 5px 15px;
-            font-size: 14px;
+            font-size: 13px;
             margin-top: 10px;
             width: auto;
             color: white;
@@ -222,18 +231,23 @@
         }
         
         .delete-exercise-btn {
-            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            background: rgba(244, 67, 54, 0.8);
             padding: 3px 10px;
-            font-size: 12px;
+            font-size: 11px;
             width: auto;
             display: inline-block;
             margin-left: 10px;
             color: white;
+            border-radius: 4px;
+        }
+        
+        .delete-exercise-btn:hover {
+            background: rgba(244, 67, 54, 1);
         }
         
         .add-exercise-form {
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid #FFD700;
+            background: rgba(10, 14, 39, 0.6);
+            border: 1px solid rgba(74, 158, 255, 0.3);
             padding: 15px;
             border-radius: 8px;
             margin-top: 15px;
@@ -249,40 +263,39 @@
         }
         
         .add-exercise-btn {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: linear-gradient(135deg, #4A9EFF 0%, #2962FF 100%);
             padding: 8px 20px;
-            font-size: 14px;
+            font-size: 13px;
             width: auto;
             margin-top: 10px;
-            color: #000;
+            color: white;
         }
         
         .toggle-form-btn {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: linear-gradient(135deg, #4A9EFF 0%, #2962FF 100%);
             padding: 8px 20px;
-            font-size: 14px;
+            font-size: 13px;
             width: auto;
             margin-right: 10px;
-            color: #000;
+            color: white;
         }
         
         .empty-training {
-            color: #FFD700;
+            color: #8AB4F8;
             font-style: italic;
             padding: 10px 0;
+            font-weight: 400;
         }
         
         .total-weight {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: linear-gradient(135deg, rgba(74, 158, 255, 0.2) 0%, rgba(41, 98, 255, 0.2) 100%);
+            border: 1px solid rgba(74, 158, 255, 0.3);
             padding: 12px;
             border-radius: 8px;
             margin: 10px 0;
-            font-weight: 900;
-            color: #000;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            font-weight: 600;
+            color: #4A9EFF;
+            font-size: 1.05em;
         }
         
         .loading {
@@ -293,40 +306,41 @@
         }
         
         .sync-status {
-            color: #FFD700;
+            color: #8AB4F8;
             text-align: center;
-            font-size: 0.9em;
+            font-size: 0.85em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-weight: 500;
         }
         
         input::placeholder {
-            color: rgba(255, 215, 0, 0.5);
+            color: rgba(138, 180, 248, 0.4);
         }
         
         .autocomplete-list {
             position: absolute;
-            background: rgba(0, 0, 0, 0.95);
-            border: 2px solid #FFD700;
+            background: rgba(15, 20, 35, 0.98);
+            border: 1px solid rgba(74, 158, 255, 0.3);
             border-top: none;
-            border-radius: 0 0 5px 5px;
+            border-radius: 0 0 8px 8px;
             max-height: 200px;
             overflow-y: auto;
             z-index: 1000;
-            width: calc(100% - 4px);
+            width: calc(100% - 2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
         
         .autocomplete-item {
             padding: 10px;
-            color: #FFD700;
+            color: #E8EAED;
             cursor: pointer;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-            font-size: 16px;
-            font-weight: 700;
+            border-bottom: 1px solid rgba(74, 158, 255, 0.1);
+            font-size: 14px;
+            font-weight: 500;
         }
         
         .autocomplete-item:hover {
-            background: rgba(255, 215, 0, 0.2);
+            background: rgba(74, 158, 255, 0.2);
         }
         
         .form-group {
@@ -337,29 +351,35 @@
             position: relative;
             height: 300px;
             margin: 20px 0;
+            width: 100%;
+        }
+        
+        .chart-container canvas {
+            max-width: 100%;
+            height: auto !important;
         }
         
         select {
             width: 100%;
             padding: 12px;
-            border: 2px solid #FFD700;
-            border-radius: 5px;
-            font-size: 17px;
-            font-weight: 700;
-            background: rgba(0, 0, 0, 0.5);
-            color: #FFD700;
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            background: rgba(10, 14, 39, 0.6);
+            color: #E8EAED;
             cursor: pointer;
         }
         
         select:focus {
             outline: none;
-            border-color: #FFA500;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            border-color: #4A9EFF;
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
         }
         
         option {
-            background: #000;
-            color: #FFD700;
+            background: #0f1419;
+            color: #E8EAED;
         }
         
         .tabs {
@@ -371,24 +391,25 @@
         .tab {
             flex: 1;
             padding: 12px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 2px solid #FFD700;
-            color: #FFD700;
+            background: rgba(10, 14, 39, 0.4);
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            color: #8AB4F8;
             text-align: center;
             cursor: pointer;
-            border-radius: 5px;
-            font-weight: 900;
-            text-transform: uppercase;
+            border-radius: 8px;
+            font-weight: 600;
             transition: all 0.3s;
         }
         
         .tab:hover {
-            background: rgba(255, 215, 0, 0.2);
+            background: rgba(74, 158, 255, 0.1);
+            border-color: rgba(74, 158, 255, 0.5);
         }
         
         .tab.active {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
+            background: linear-gradient(135deg, #4A9EFF 0%, #2962FF 100%);
+            color: #FFFFFF;
+            border-color: transparent;
         }
         
         .tab-content {
@@ -419,17 +440,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            color: #FFD700;
+            background: rgba(10, 14, 39, 0.4);
+            border: 1px solid rgba(74, 158, 255, 0.2);
+            color: #8AB4F8;
             cursor: pointer;
-            border-radius: 5px;
-            font-weight: 700;
+            border-radius: 6px;
+            font-weight: 500;
             transition: all 0.3s;
         }
         
         .calendar-day:hover {
-            background: rgba(255, 215, 0, 0.2);
+            background: rgba(74, 158, 255, 0.2);
+            border-color: rgba(74, 158, 255, 0.4);
         }
         
         .calendar-day.empty {
@@ -439,14 +461,15 @@
         }
         
         .calendar-day.has-training {
-            background: rgba(255, 215, 0, 0.3);
-            border: 2px solid #FFD700;
-            font-weight: 900;
+            background: rgba(74, 158, 255, 0.3);
+            border: 2px solid #4A9EFF;
+            font-weight: 600;
+            color: #4A9EFF;
         }
         
         .calendar-day.selected {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
+            background: linear-gradient(135deg, #4A9EFF 0%, #2962FF 100%);
+            color: #FFFFFF;
         }
         
         .calendar-controls {
@@ -459,21 +482,28 @@
         .calendar-controls button {
             width: auto;
             padding: 8px 20px;
-            font-size: 14px;
+            font-size: 13px;
         }
         
         .calendar-month {
-            color: #FFD700;
-            font-weight: 900;
-            font-size: 1.2em;
-            text-transform: uppercase;
+            color: #4A9EFF;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .calendar-header {
+            text-align: center;
+            color: #8AB4F8;
+            font-weight: 600;
+            padding: 10px;
+            font-size: 0.85em;
         }
         
         .selected-day-details {
             margin-top: 20px;
             padding: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid #FFD700;
+            background: rgba(10, 14, 39, 0.6);
+            border: 1px solid rgba(74, 158, 255, 0.3);
             border-radius: 8px;
         }
     </style>
@@ -500,7 +530,15 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
-        const dataRef = ref(database, 'gymData');
+        
+        // Check if user is logged in (check both localStorage and sessionStorage)
+        const userId = localStorage.getItem('userId') || sessionStorage.getItem('userId');
+        if (!userId) {
+            window.location.href = 'login.html';
+        }
+        
+        // Use user-specific data path
+        const dataRef = ref(database, `users/${userId}/gymData`);
         
         // Make functions globally available
         window.firebaseReady = true;
@@ -528,27 +566,39 @@
         }
     </script>
     <div class="container">
-        <h1>🏋️ TitanTrack</h1>
-        <p class="tagline">Because if you didn't log it, did you really even lift?</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <button onclick="logout()" style="padding: 8px 15px; font-size: 14px; width: auto; background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);" data-en="🚪 Logout" data-pl="🚪 Wyloguj">🚪 Logout</button>
+            <div>
+                <button onclick="switchLanguage('en')" id="langEN" style="padding: 8px 15px; font-size: 14px; width: auto; margin-right: 5px;">🇬🇧 EN</button>
+                <button onclick="switchLanguage('pl')" id="langPL" style="padding: 8px 15px; font-size: 14px; width: auto;">🇵🇱 PL</button>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="logo.png" alt="TitanTrack" style="max-width: 100%; height: auto; max-height: 300px; filter: drop-shadow(0 0 20px rgba(74, 158, 255, 0.3));">
+        </div>
         <p class="sync-status" id="syncStatus">☁️ Synced with cloud</p>
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="coach.html" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #4A9EFF 0%, #2962FF 100%); color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);" data-en="🤖 AI Coach" data-pl="🤖 Trener AI" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(74, 158, 255, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(74, 158, 255, 0.3)'">🤖 AI Coach</a>
+        </div>
         
         <div class="card">
-            <h2 style="margin-bottom: 20px;">Create New Training</h2>
+            <h2 style="margin-bottom: 20px;" data-en="Create New Training" data-pl="Utwórz Nowy Trening">Create New Training</h2>
             <form id="newTrainingForm">
                 <div class="form-group">
-                    <label>Training Date</label>
+                    <label data-en="Training Date" data-pl="Data Treningu">Training Date</label>
                     <input type="date" id="newTrainingDate" required>
                 </div>
-                <button type="submit">Create Training</button>
+                <button type="submit" data-en="Create Training" data-pl="Utwórz Trening">Create Training</button>
             </form>
         </div>
         
         <div class="card">
-            <h2 style="margin-bottom: 20px;">Training Catalog</h2>
+            <h2 style="margin-bottom: 20px;" data-en="Training Catalog" data-pl="Katalog Treningów">Training Catalog</h2>
             
             <div class="tabs">
-                <div class="tab active" onclick="switchTab('recent')">Last 7 Trainings</div>
-                <div class="tab" onclick="switchTab('archive')">Archive</div>
+                <div class="tab active" onclick="switchTab('recent')" data-en="Last 7 Trainings" data-pl="Ostatnie 7 Treningów">Last 7 Trainings</div>
+                <div class="tab" onclick="switchTab('archive')" data-en="Archive" data-pl="Archiwum">Archive</div>
             </div>
             
             <div id="recent-tab" class="tab-content active">
@@ -567,18 +617,18 @@
         </div>
         
         <div class="card">
-            <h2 style="margin-bottom: 20px;">💪 Progress Charts</h2>
+            <h2 style="margin-bottom: 20px;" data-en="💪 Progress Charts" data-pl="💪 Wykresy Postępów">💪 Progress Charts</h2>
             
-            <h3 style="color: #FFD700; margin: 20px 0 10px 0; font-size: 1.2em;">Total Weight Lifted Per Training</h3>
+            <h3 style="color: #4A9EFF; margin: 20px 0 10px 0; font-size: 1.1em; font-weight: 600;" data-en="Total Weight Lifted Per Training" data-pl="Całkowity Ciężar Podniesiony Na Trening">Total Weight Lifted Per Training</h3>
             <div class="chart-container">
                 <canvas id="totalWeightChart"></canvas>
             </div>
             
-            <h3 style="color: #FFD700; margin: 30px 0 10px 0; font-size: 1.2em;">Max Weight Per Exercise</h3>
+            <h3 style="color: #4A9EFF; margin: 30px 0 10px 0; font-size: 1.1em; font-weight: 600;" data-en="Max Weight Per Exercise" data-pl="Maksymalny Ciężar Na Ćwiczenie">Max Weight Per Exercise</h3>
             <div class="form-group">
-                <label>Select Exercise</label>
+                <label data-en="Select Exercise" data-pl="Wybierz Ćwiczenie">Select Exercise</label>
                 <select id="exerciseSelect" onchange="updateExerciseChart()">
-                    <option value="">-- Select an exercise --</option>
+                    <option value="" data-en="-- Select an exercise --" data-pl="-- Wybierz ćwiczenie --">-- Select an exercise --</option>
                 </select>
             </div>
             <div class="chart-container">
@@ -643,6 +693,11 @@
         
         // Initialize charts
         function initCharts() {
+            // Wait for Chart.js to load
+            if (typeof Chart === 'undefined') {
+                setTimeout(initCharts, 100);
+                return;
+            }
             updateTotalWeightChart();
             updateExerciseSelect();
         }
@@ -732,16 +787,24 @@
             event.target.classList.add('selected');
             
             const displayDate = formatDateForDisplay(dateKey);
-            const totalWeight = dayData.reduce((sum, ex) => sum + (ex.weight * ex.reps), 0);
+            const totalWeight = dayData.reduce((sum, ex) => {
+                const series = ex.series || 1;
+                return sum + (ex.weight * ex.reps * series);
+            }, 0);
             
             const detailsHtml = `
                 <h3 style="color: #FFD700; margin-bottom: 15px; font-size: 1.3em;">📅 ${displayDate}</h3>
-                ${dayData.map(ex => `
+                ${dayData.map(ex => {
+                    const series = ex.series || 1;
+                    const totalPerSet = ex.weight * ex.reps;
+                    const totalWeight = totalPerSet * series;
+                    return `
                     <div class="exercise-item">
                         <div class="exercise-name">${ex.exercise}</div>
-                        <div class="exercise-stats">${ex.weight} kg × ${ex.reps} reps = ${ex.weight * ex.reps} kg total</div>
+                        <div class="exercise-stats">${series} × (${ex.weight} kg × ${ex.reps} reps) = ${totalWeight} kg total</div>
                     </div>
-                `).join('')}
+                    `;
+                }).join('')}
                 <div class="total-weight" style="margin-top: 15px;">
                     💪 Total Weight Lifted: ${totalWeight.toLocaleString()} kg
                     <br>
@@ -754,15 +817,32 @@
         
         // Update total weight chart
         function updateTotalWeightChart() {
+            if (typeof Chart === 'undefined') {
+                console.error('Chart.js not loaded');
+                return;
+            }
+            
             const data = loadData();
             const dates = Object.keys(data).sort();
             
+            if (dates.length === 0) {
+                return;
+            }
+            
             const labels = dates.map(d => formatDateForDisplay(d));
             const weights = dates.map(date => {
-                return data[date].reduce((sum, ex) => sum + (ex.weight * ex.reps), 0);
+                return data[date].reduce((sum, ex) => {
+                    const series = ex.series || 1;
+                    return sum + (ex.weight * ex.reps * series);
+                }, 0);
             });
             
             const ctx = document.getElementById('totalWeightChart');
+            
+            if (!ctx) {
+                console.error('Canvas element not found');
+                return;
+            }
             
             if (totalWeightChart) {
                 totalWeightChart.destroy();
@@ -775,15 +855,18 @@
                     datasets: [{
                         label: 'Total Weight (kg)',
                         data: weights,
-                        borderColor: '#FFD700',
-                        backgroundColor: 'rgba(255, 215, 0, 0.2)',
+                        borderColor: '#4A9EFF',
+                        backgroundColor: 'rgba(74, 158, 255, 0.15)',
                         borderWidth: 3,
                         tension: 0.4,
                         fill: true,
-                        pointRadius: 6,
-                        pointBackgroundColor: '#FFD700',
-                        pointBorderColor: '#000',
-                        pointBorderWidth: 2
+                        pointRadius: 5,
+                        pointBackgroundColor: '#4A9EFF',
+                        pointBorderColor: '#FFFFFF',
+                        pointBorderWidth: 2,
+                        pointHoverRadius: 7,
+                        pointHoverBackgroundColor: '#5AA9FF',
+                        pointHoverBorderColor: '#FFFFFF'
                     }]
                 },
                 options: {
@@ -792,20 +875,38 @@
                     plugins: {
                         legend: {
                             labels: {
-                                color: '#FFD700',
-                                font: { size: 14, weight: 'bold' }
+                                color: '#8AB4F8',
+                                font: { size: 13, weight: '500' }
                             }
                         }
                     },
                     scales: {
                         y: {
                             beginAtZero: true,
-                            ticks: { color: '#FFD700', font: { weight: 'bold' } },
-                            grid: { color: 'rgba(255, 215, 0, 0.1)' }
+                            ticks: { 
+                                color: '#8AB4F8', 
+                                font: { weight: '500' }
+                            },
+                            grid: { 
+                                color: 'rgba(74, 158, 255, 0.1)',
+                                drawBorder: false
+                            },
+                            border: {
+                                display: false
+                            }
                         },
                         x: {
-                            ticks: { color: '#FFD700', font: { weight: 'bold' } },
-                            grid: { color: 'rgba(255, 215, 0, 0.1)' }
+                            ticks: { 
+                                color: '#8AB4F8', 
+                                font: { weight: '500' }
+                            },
+                            grid: { 
+                                color: 'rgba(74, 158, 255, 0.05)',
+                                drawBorder: false
+                            },
+                            border: {
+                                display: false
+                            }
                         }
                     }
                 }
@@ -823,6 +924,11 @@
         
         // Update exercise-specific chart
         window.updateExerciseChart = function() {
+            if (typeof Chart === 'undefined') {
+                console.error('Chart.js not loaded');
+                return;
+            }
+            
             const selectedExercise = document.getElementById('exerciseSelect').value;
             
             if (!selectedExercise) {
@@ -850,6 +956,11 @@
             
             const ctx = document.getElementById('exerciseChart');
             
+            if (!ctx) {
+                console.error('Canvas element not found');
+                return;
+            }
+            
             if (exerciseChart) {
                 exerciseChart.destroy();
             }
@@ -861,9 +972,11 @@
                     datasets: [{
                         label: `Max Weight - ${selectedExercise} (kg)`,
                         data: chartData.map(d => d.weight),
-                        backgroundColor: 'rgba(255, 215, 0, 0.8)',
-                        borderColor: '#FFD700',
-                        borderWidth: 2
+                        backgroundColor: 'rgba(74, 158, 255, 0.7)',
+                        borderColor: '#4A9EFF',
+                        borderWidth: 0,
+                        borderRadius: 6,
+                        hoverBackgroundColor: 'rgba(74, 158, 255, 0.9)'
                     }]
                 },
                 options: {
@@ -872,20 +985,37 @@
                     plugins: {
                         legend: {
                             labels: {
-                                color: '#FFD700',
-                                font: { size: 14, weight: 'bold' }
+                                color: '#8AB4F8',
+                                font: { size: 13, weight: '500' }
                             }
                         }
                     },
                     scales: {
                         y: {
                             beginAtZero: true,
-                            ticks: { color: '#FFD700', font: { weight: 'bold' } },
-                            grid: { color: 'rgba(255, 215, 0, 0.1)' }
+                            ticks: { 
+                                color: '#8AB4F8', 
+                                font: { weight: '500' }
+                            },
+                            grid: { 
+                                color: 'rgba(74, 158, 255, 0.1)',
+                                drawBorder: false
+                            },
+                            border: {
+                                display: false
+                            }
                         },
                         x: {
-                            ticks: { color: '#FFD700', font: { weight: 'bold' } },
-                            grid: { color: 'rgba(255, 215, 0, 0.1)' }
+                            ticks: { 
+                                color: '#8AB4F8', 
+                                font: { weight: '500' }
+                            },
+                            grid: { 
+                                display: false
+                            },
+                            border: {
+                                display: false
+                            }
                         }
                     }
                 }
@@ -922,7 +1052,7 @@
                 saveData(data);
                 loadTrainings();
             } else {
-                alert('Training for this date already exists!');
+                alert(t('trainingExists'));
             }
         });
         
@@ -996,7 +1126,7 @@
             const container = document.getElementById('trainings');
             
             if (Object.keys(data).length === 0) {
-                container.innerHTML = '<div class="no-data">No trainings yet. Add your first exercise!</div>';
+                container.innerHTML = `<div class="no-data">${t('noTrainings')}</div>`;
                 return;
             }
             
@@ -1010,7 +1140,10 @@
             
             container.innerHTML = sortedDates.map(dateKey => {
                 const displayDate = formatDateForDisplay(dateKey);
-                const totalWeight = data[dateKey].reduce((sum, ex) => sum + (ex.weight * ex.reps), 0);
+                const totalWeight = data[dateKey].reduce((sum, ex) => {
+                    const series = ex.series || 1;
+                    return sum + (ex.weight * ex.reps * series);
+                }, 0);
                 
                 return `
                 <div class="training-date collapsed" id="training-${dateKey}">
@@ -1019,41 +1152,50 @@
                         <span class="collapse-icon">▼</span>
                     </h3>
                     <div class="training-content">
-                        ${data[dateKey].length === 0 ? '<div class="empty-training">No exercises yet</div>' : ''}
-                        ${data[dateKey].map(ex => `
+                        ${data[dateKey].length === 0 ? `<div class="empty-training">${t('noExercises')}</div>` : ''}
+                        ${data[dateKey].map(ex => {
+                            const series = ex.series || 1;
+                            const totalPerSet = ex.weight * ex.reps;
+                            const totalWeight = totalPerSet * series;
+                            return `
                             <div class="exercise-item">
                                 <div class="exercise-name">
                                     ${ex.exercise}
                                     <button class="delete-exercise-btn" onclick="deleteExercise('${dateKey}', ${ex.id})">✕</button>
                                 </div>
-                                <div class="exercise-stats">${ex.weight} kg × ${ex.reps} reps = ${ex.weight * ex.reps} kg total</div>
+                                <div class="exercise-stats">${series} × (${ex.weight} kg × ${ex.reps} reps) = ${totalWeight} kg total</div>
                             </div>
-                        `).join('')}
+                            `;
+                        }).join('')}
                         ${data[dateKey].length > 0 ? `
                             <div class="total-weight">
-                                💪 Total Weight Lifted: ${totalWeight.toLocaleString()} kg
+                                💪 ${t('totalWeightLifted')}: ${totalWeight.toLocaleString()} kg
                                 <br>
                                 🐘 ${getElephantEquivalent(totalWeight)}
                             </div>
                         ` : ''}
                         <div class="btn-group">
-                            <button class="toggle-form-btn" onclick="toggleAddForm('${dateKey}')">+ Add Exercise</button>
-                            <button class="delete-btn" onclick="deleteTraining('${dateKey}')">Delete Training</button>
+                            <button class="toggle-form-btn" onclick="toggleAddForm('${dateKey}')">${t('addExercise')}</button>
+                            <button class="delete-btn" onclick="deleteTraining('${dateKey}')">${t('deleteTraining')}</button>
                         </div>
                         <div class="add-exercise-form" id="form-${dateKey}">
                             <div class="form-group">
-                                <label>Exercise</label>
+                                <label>${t('exercise')}</label>
                                 <input type="text" id="exercise-${dateKey}" placeholder="e.g., Bench Press" required autocomplete="off">
                             </div>
                             <div class="form-group">
-                                <label>Weight (kg)</label>
+                                <label>${t('series')}</label>
+                                <input type="number" id="series-${dateKey}" placeholder="e.g., 3" min="1" value="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label>${t('weight')}</label>
                                 <input type="number" id="weight-${dateKey}" placeholder="e.g., 150" step="0.5" required>
                             </div>
                             <div class="form-group">
-                                <label>Reps</label>
+                                <label>${t('reps')}</label>
                                 <input type="number" id="reps-${dateKey}" placeholder="e.g., 45" required>
                             </div>
-                            <button class="add-exercise-btn" onclick="addExerciseToTraining('${dateKey}')">Add</button>
+                            <button class="add-exercise-btn" onclick="addExerciseToTraining('${dateKey}')">${t('add')}</button>
                         </div>
                     </div>
                 </div>
@@ -1072,10 +1214,12 @@
             const elephants = weight / elephantWeight;
             
             if (elephants >= 1) {
-                return `That's ${elephants.toFixed(2)} elephants!`;
+                const text = currentLang === 'pl' ? `To ${elephants.toFixed(2)} ${t('elephants')}!` : `That's ${elephants.toFixed(2)} ${t('elephants')}!`;
+                return text;
             } else {
                 const percentage = (elephants * 100).toFixed(1);
-                return `That's ${percentage}% of an elephant!`;
+                const text = currentLang === 'pl' ? `To ${percentage}% ${t('elephant')}!` : `That's ${percentage}% ${t('elephant')}!`;
+                return text;
             }
         }
         
@@ -1098,11 +1242,12 @@
         
         function addExerciseToTraining(dateKey) {
             const exercise = document.getElementById(`exercise-${dateKey}`).value;
+            const series = document.getElementById(`series-${dateKey}`).value;
             const weight = document.getElementById(`weight-${dateKey}`).value;
             const reps = document.getElementById(`reps-${dateKey}`).value;
             
-            if (!exercise || !weight || !reps) {
-                alert('Please fill all fields');
+            if (!exercise || !series || !weight || !reps) {
+                alert(t('fillAllFields'));
                 return;
             }
             
@@ -1110,6 +1255,7 @@
             
             data[dateKey].push({
                 exercise: exercise,
+                series: parseInt(series),
                 weight: parseFloat(weight),
                 reps: parseInt(reps),
                 id: Date.now()
@@ -1134,7 +1280,7 @@
         
         function deleteTraining(dateKey) {
             const displayDate = formatDateForDisplay(dateKey);
-            if (confirm(`Delete training from ${displayDate}?`)) {
+            if (confirm(`${t('deleteConfirm')} ${displayDate}?`)) {
                 const data = loadData();
                 delete data[dateKey];
                 saveData(data);
@@ -1164,6 +1310,87 @@
                 updateExerciseChart();
             }
         }
+        
+        // Language translations
+        const translations = {
+            en: {
+                exercise: 'Exercise',
+                series: 'Series',
+                weight: 'Weight (kg)',
+                reps: 'Reps',
+                addExercise: '+ Add Exercise',
+                deleteTraining: 'Delete Training',
+                add: 'Add',
+                totalWeightLifted: 'Total Weight Lifted',
+                noExercises: 'No exercises yet',
+                noTrainings: 'No trainings yet. Add your first exercise!',
+                trainingExists: 'Training for this date already exists!',
+                fillAllFields: 'Please fill all fields',
+                deleteConfirm: 'Delete training from',
+                elephants: 'elephants',
+                elephant: 'of an elephant'
+            },
+            pl: {
+                exercise: 'Ćwiczenie',
+                series: 'Serie',
+                weight: 'Ciężar (kg)',
+                reps: 'Powtórzenia',
+                addExercise: '+ Dodaj Ćwiczenie',
+                deleteTraining: 'Usuń Trening',
+                add: 'Dodaj',
+                totalWeightLifted: 'Całkowity Podniesiony Ciężar',
+                noExercises: 'Brak ćwiczeń',
+                noTrainings: 'Brak treningów. Dodaj swoje pierwsze ćwiczenie!',
+                trainingExists: 'Trening dla tej daty już istnieje!',
+                fillAllFields: 'Wypełnij wszystkie pola',
+                deleteConfirm: 'Usunąć trening z',
+                elephants: 'słoni',
+                elephant: 'słonia'
+            }
+        };
+        
+        let currentLang = localStorage.getItem('language') || 'en';
+        
+        // Switch language
+        window.switchLanguage = function(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update all elements with data-en and data-pl attributes
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+            
+            // Update button styles
+            document.getElementById('langEN').style.opacity = lang === 'en' ? '1' : '0.5';
+            document.getElementById('langPL').style.opacity = lang === 'pl' ? '1' : '0.5';
+            
+            // Reload trainings to update text
+            loadTrainings();
+        };
+        
+        // Get translation
+        function t(key) {
+            return translations[currentLang][key] || translations.en[key];
+        }
+        
+        // Logout function
+        window.logout = function() {
+            const confirmMsg = currentLang === 'pl' ? 'Czy na pewno chcesz się wylogować?' : 'Are you sure you want to logout?';
+            if (confirm(confirmMsg)) {
+                // Clear all user data from localStorage and sessionStorage
+                const lang = localStorage.getItem('language');
+                localStorage.clear();
+                sessionStorage.clear();
+                localStorage.setItem('language', lang); // Keep language preference
+                window.location.href = 'login.html';
+            }
+        };
+        
+        // Initialize language on load
+        setTimeout(() => {
+            switchLanguage(currentLang);
+        }, 100);
     </script>
 </body>
 </html>
